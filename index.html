@@ -1890,11 +1890,35 @@
     const tSalvo = Storage.get('colinha_theme') || 'dark';
     document.body.setAttribute('data-theme', tSalvo);
 
+    // Cópia de segurança: se o localStorage vier vazio (dados limpos pelo sistema), tenta recuperar do IndexedDB
+    function restaurarDoIndexedDB() {
+      try {
+        const req = indexedDB.open('ColinhaEleitoralDB', 1);
+        req.onupgradeneeded = (e) => e.target.result.createObjectStore('dados');
+        req.onsuccess = (e) => {
+          const db = e.target.result;
+          if (!db.objectStoreNames.contains('dados')) return;
+          const get = db.transaction('dados', 'readonly').objectStore('dados').get('colinhas_db');
+          get.onsuccess = () => {
+            if (colinhas.length > 0 || !get.result) return;
+            let lista = [];
+            try { lista = normalizarLista(JSON.parse(get.result)); } catch (err) { return; }
+            if (lista.length === 0) return;
+            colinhas = lista;
+            salvarMemoria();
+            abrirColinha(colinhas[0].id);
+            mostrarCustomAlert('Colinhas Recuperadas', `${colinhas.length} colinha(s) restaurada(s) da cópia de segurança.`, 'blue');
+          };
+        };
+      } catch (err) {}
+    }
+
     if (colinhas.length > 0) {
       salvarMemoria(); // grava já no formato normalizado (migra colinhas antigas)
       abrirColinha(colinhas[0].id);
     } else {
       mostrarTelaCriacao();
+      restaurarDoIndexedDB();
     }
   </script>
 </body>
