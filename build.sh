@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Gera o APK de release (assinado com ~/.colinha-keystore) a partir de index.html e copia para ~/projects/Cola_Eleitoral_Ramos.apk
+# Gera o APK de release (assinado com ~/.colinha-keystore) e copia para ~/projects/Cola_Eleitoral_Ramos_v<versao>.apk a partir de index.html e copia para ~/projects/Cola_Eleitoral_Ramos.apk
 set -euo pipefail
 SRC="$(cd "$(dirname "$0")" && pwd)"
 APP="$HOME/colinha-app"
@@ -11,6 +11,8 @@ cp "$SRC/index.html" "$APP/www/index.html"
 
 APK="$APP/android/app/build/outputs/apk/release/app-release.apk"
 unzip -p "$APK" assets/public/index.html | cmp - "$SRC/index.html"   # confere que o APK tem a fonte atual
-cp "$APK" "$HOME/projects/Cola_Eleitoral_Ramos.apk"
+VERSAO="$(grep -oP 'versionName "\K[^"]+' "$APP/android/app/build.gradle")"
+DEST="$HOME/projects/Cola_Eleitoral_Ramos_v${VERSAO}.apk"
+cp "$APK" "$DEST"
 cp "$SRC/index.html" "$HOME/projects/cola_eleitoral_ramos.html"
-echo "OK: $HOME/projects/Cola_Eleitoral_Ramos.apk"
+echo "OK: $DEST"
