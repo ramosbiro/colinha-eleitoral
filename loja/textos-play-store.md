@@ -42,7 +42,7 @@ O Colinha Eleitoral é um aplicativo independente e não possui vínculo com a J
 As capturas usam dados **fictícios** de exemplo. Revise antes de enviar.
 
 ## Política de privacidade
-Arquivo pronto: `politica-de-privacidade.html` / `.md`. O Console exige uma **URL pública**. Antes de publicar: preencher e-mail e nome do desenvolvedor e hospedar a página (ex.: GitHub Pages, Google Sites). Não hospedei nada: isso torna a página pública e precisa da sua decisão.
+Arquivo pronto: `politica-de-privacidade.html` / `.md`. O Console exige uma **URL pública**. E-mail e nome já estão preenchidos; falta hospedar a página (ex.: GitHub Pages, Google Sites). Não hospedei nada: isso torna a página pública e precisa da sua decisão.
 
 ## Segurança dos dados (Data safety) — respostas sugeridas
 - O app coleta ou compartilha dados de usuário obrigatórios? **Não**

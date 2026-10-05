@@ -14,7 +14,8 @@ Status em 05/10/2026: **v1.9 (build 10) em fase Beta**. Itens marcados já estã
 ## Falta você decidir/fazer
 - [ ] **Testar no celular** a v1.9 inteira (ver roteiro abaixo)
 - [ ] Criar a conta de desenvolvedor no Google Play Console (taxa única; verifique valor e a verificação de identidade vigentes)
-- [ ] Preencher **e-mail e nome** na política e **hospedá-la em URL pública**
+- [x] E-mail e nome preenchidos na política
+- [ ] **Hospedar a política em URL pública**
 - [ ] **Backup da chave** `~/.colinha-keystore` (já copiada para o Windows; guardar também em local seguro). Com o Play App Signing, essa chave vira a *chave de envio (upload key)*.
 - [ ] Conferir a política do Google Play sobre **aplicativos relacionados a eleições** e declarações exigidas na seção de conteúdo do app (as regras mudam; confirmar na Central de Políticas antes de enviar). O app não simula a urna nem registra voto, e traz aviso de independência.
 - [ ] Rodar **teste fechado/interno** com testadores antes da produção. Contas pessoais novas podem ter exigência mínima de testadores e de dias de teste: **confirmar no Console**.
