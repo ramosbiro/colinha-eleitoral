@@ -37,6 +37,6 @@ O Colinha Eleitoral **não possui vínculo** com a Justiça Eleitoral, o Tribuna
 Podemos atualizar esta política para refletir mudanças no app. A data de atualização estará sempre no topo.
 
 ## 10. Contato
-Dúvidas sobre esta política: **[PREENCHER: e-mail de contato do desenvolvedor]**
+Dúvidas sobre esta política: **ramosbiro@gmail.com**
 
-Desenvolvedor: **[PREENCHER: nome ou razão social]**
+Desenvolvedor: **Leandro Ramos**
